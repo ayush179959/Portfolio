@@ -1,0 +1,111 @@
+body{
+  margin: 0px;
+  padding: 0px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(1, 13, 24, 0.99);
+}
+
+.box{
+  width: 300px;
+  height: 400px;
+  
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  
+  /* background: conic-gradient(#5500ff 30deg, #d900ff, #009dff 330deg); */
+  background: linear-gradient(rgb(0, 179, 255) 20%, rgb(0, 89, 255)40%, rgb(115, 0, 255) 60%);
+  
+  border-radius: 36px;
+  /* display: none; */
+  
+  
+  
+}
+
+.box::before{
+
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 160%;
+    background: conic-gradient(rgb(47, 47, 47) 10%, transparent ,rgba(255, 255, 255, 0.642),transparent, rgb(46, 46, 46) 40%);
+    
+    animation: animate 6s linear infinite;
+    
+    /* filter: blur(10px); */
+    /* display: none; */
+}
+
+@keyframes animate {
+  0%{
+    transform: rotate(0deg);
+  }
+  100%{
+    transform: rotate(360deg);
+  }
+}
+.box::after{
+  content:'';
+  position: absolute;
+  inset: 1px;
+  background: black;
+  border-radius: 36px;
+  /* display: none; */
+  
+}
+.box-back{
+  position: absolute;
+  width: 300px;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 36px;
+  background: linear-gradient(rgb(0, 179, 255) 20%, rgb(0, 89, 255)40%, rgb(115, 0, 255) 60%);
+  filter: blur(30px);
+  overflow: hidden;
+  /* display: none; */
+}
+
+.box-back::before{
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 160%;
+  
+  background: conic-gradient(rgba(1, 13, 24, 0.99) 60%, transparent, rgba(1, 13, 24, 0.99) 100%);
+    
+  animation: animate 6s linear infinite; 
+}
+.box h1{
+  color: white;
+  z-index: 2;
+}
+
+.box:hover{
+  box-shadow: 0 0 100px cyan;
+  transition: 0.2s;
+}
+.box:hover::before{
+  background: transparent;
+}
+
+
+.box:hover h1{
+  color: cyan;
+  
+}
+
+
+
+
+
+
+
+  
